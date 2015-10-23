@@ -1,0 +1,42 @@
+#---------------------------------#
+#  Build Script                   #
+#---------------------------------#
+build_script:
+  - ps: .\build.ps1 -Target AppVeyor
+
+# Tests
+test: off
+
+#---------------------------------#
+#  Environment Variables          #
+#---------------------------------#
+environment:
+  MYGET_MASTER_API_KEY:
+    secure: 0TPZJG1sql+TBGDGbZlrEC8O80MAJserulZiU/8a+VTxjSgIZh/SoNhal/DeihIx
+  MYGET_DEVELOP_API_KEY:
+    secure: e0OciROS/831nZpT5AjH4oTeHurdWoouWDfw4YzD0AAONAgZTLh0Yw4slTnJT1y8
+  MYGET_MASTER_SOURCE:
+    secure: MJizIBsfdXz+JKhvzlgcmB0isLl+NNGcJVLkQu1a2ugj1bqo9FvxvzI6dohW6lZskdukxQiKO1iQ9ZdP2qbSZg==
+  MYGET_DEVELOP_SOURCE:
+    secure: MJizIBsfdXz+JKhvzlgcmB0isLl+NNGcJVLkQu1a2ug5WB1Jmqf37/i26f2jm/FsbLcIrRWNHzeLbSqvK+nOIQ==
+  NUGET_API_KEY:
+    secure: a/xbTgIAc+QGdAwANmenmrUJFG5hqB+jMyqB6y80KZYXfRHOVEB+1dB4CEyDednf
+  NUGET_SOURCE:
+    secure: kc+ZLsNjHz3F35FkQc5DIdYehkISa+3+8s1b9dEP4BQ=
+
+#---------------------------------#
+#  Notifications Configuration    #
+#---------------------------------#
+notifications:
+  - provider: Webhook
+    url: https://webhooks.gitter.im/e/b0b28939e26fdff3f0ca
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true
+
+#---------------------------------#
+#  Build Cache                    #
+#---------------------------------#
+cache:
+- Source\packages -> Source\**\packages.config
+- Tools -> Tools\packages.config
