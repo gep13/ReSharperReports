@@ -10,11 +10,18 @@ using ReSharperReports.Options;
 
 namespace ReSharperReports
 {
+    /// <summary>
+    /// The main entry point
+    /// </summary>
     public static class Program
     {
         private static StringBuilder log = new StringBuilder();
 
-        static void Main(string[] args)
+        /// <summary>
+        /// Entry point for the console application
+        /// </summary>
+        /// <param name="args">The passed in argumnets from command line</param>
+        private static void Main(string[] args)
         {
             var options = new MainOptions();
             if (CommandLine.Parser.Default.ParseArguments(args, options))
