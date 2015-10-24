@@ -7,7 +7,7 @@ using System.Reflection;
 using System;
 
 [assembly: AssemblyTitle("ReSharperReports")]
-[assembly: AssemblyDescription("ReSharperReports Console Application")]
+[assembly: AssemblyDescription("Command line tool to allow generation of human readable ReSharper Reports")]
 [assembly: AssemblyCompany("gep13")]
 [assembly: AssemblyProduct("ReSharperReports")]
 [assembly: AssemblyVersion("0.1.0")]
