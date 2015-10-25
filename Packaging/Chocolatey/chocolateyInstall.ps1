@@ -1,0 +1,1 @@
+Generate-BinFile "rsr" "$packageFolder\Tools\ReSharperReports.exe"

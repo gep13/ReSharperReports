@@ -1,0 +1,1 @@
+Remove-BinFile "rsr" "$packageFolder\Tools\ReSharperReports.exe"

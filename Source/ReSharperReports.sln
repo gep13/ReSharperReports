@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScripts", "BuildScripts", "{F07C055C-19B2-44AC-969B-12895B5155A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
+		..\build.bat = ..\build.bat
+		..\build.cake = ..\build.cake
+		..\build.ps1 = ..\build.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharperReports", "ReSharperReports\ReSharperReports.csproj", "{591BADB3-E779-4802-A37E-41949C0B99AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chocolatey", "Chocolatey", "{27054C6D-DAF9-441A-A4EB-6FFDFD8BC645}"
+	ProjectSection(SolutionItems) = preProject
+		..\Packaging\Chocolatey\chocolateyInstall.ps1 = ..\Packaging\Chocolatey\chocolateyInstall.ps1
+		..\Packaging\Chocolatey\chocolateyUninstall.ps1 = ..\Packaging\Chocolatey\chocolateyUninstall.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppVeyor", "AppVeyor", "{70A66735-21A0-40C0-B4BA-441B4806A1B4}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{591BADB3-E779-4802-A37E-41949C0B99AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591BADB3-E779-4802-A37E-41949C0B99AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591BADB3-E779-4802-A37E-41949C0B99AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591BADB3-E779-4802-A37E-41949C0B99AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
