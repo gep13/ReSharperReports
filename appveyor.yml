@@ -8,6 +8,15 @@ build_script:
 test: off
 
 #---------------------------------#
+#        Branches to build        #
+#---------------------------------#
+branches:
+  # Whitelist
+  only:
+    - develop
+    - master
+
+#---------------------------------#
 #  Environment Variables          #
 #---------------------------------#
 environment:
@@ -37,3 +46,10 @@ notifications:
 cache:
 - Source\packages -> Source\**\packages.config
 - Tools -> Tools\packages.config
+
+#---------------------------------#
+#  Skip builds for doc changes    #
+#---------------------------------#
+skip_commits:
+  # Regex for matching commit message
+  message: /(doc).*/
