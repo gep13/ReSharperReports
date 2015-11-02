@@ -7,6 +7,14 @@
     <html>
       <body>
         <head>
+          <script>
+            function sendHttpGetRequest(fileName, lineNumber) {
+            var url = "http://127.0.0.1:63330/file?file=" + fileName + "&amp;line=" + lineNumber;
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open('GET', url, false);
+            xmlHttp.send(null);
+            }
+          </script>
           <style>
             tr.error {
             background-color: #F8B2B2;
@@ -61,7 +69,12 @@
                       <xsl:value-of select="@File"/>
                     </td>
                     <td>
-                      <xsl:value-of select="@Line"/>
+                      <xsl:element name="a">
+                        <xsl:attribute name="href">
+                        </xsl:attribute>
+                        <xsl:attribute name="onclick">sendHttpGetRequest('<xsl:value-of select="translate(@File, '\', '/')"/>',<xsl:value-of select="@Line"/>); return false;</xsl:attribute>
+                        <xsl:value-of select="@Line"/>
+                      </xsl:element>
                     </td>
                     <td>
                       <xsl:value-of select="@Message"/>
@@ -108,7 +121,12 @@
                       <xsl:value-of select="@File"/>
                     </td>
                     <td>
-                      <xsl:value-of select="@Line"/>
+                      <xsl:element name="a">
+                        <xsl:attribute name="href">
+                        </xsl:attribute>
+                        <xsl:attribute name="onclick">sendHttpGetRequest('<xsl:value-of select="translate(@File, '\', '/')"/>',<xsl:value-of select="@Line"/>); return false;</xsl:attribute>
+                        <xsl:value-of select="@Line"/>
+                      </xsl:element>
                     </td>
                     <td>
                       <xsl:value-of select="@Message"/>
@@ -155,7 +173,12 @@
                       <xsl:value-of select="@File"/>
                     </td>
                     <td>
-                      <xsl:value-of select="@Line"/>
+                      <xsl:element name="a">
+                        <xsl:attribute name="href">
+                        </xsl:attribute>
+                        <xsl:attribute name="onclick">sendHttpGetRequest('<xsl:value-of select="translate(@File, '\', '/')"/>',<xsl:value-of select="@Line"/>); return false;</xsl:attribute>
+                        <xsl:value-of select="@Line"/>
+                      </xsl:element>
                     </td>
                     <td>
                       <xsl:value-of select="@Message"/>
@@ -202,7 +225,12 @@
                       <xsl:value-of select="@File"/>
                     </td>
                     <td>
-                      <xsl:value-of select="@Line"/>
+                      <xsl:element name="a">
+                        <xsl:attribute name="href">
+                        </xsl:attribute>
+                        <xsl:attribute name="onclick">sendHttpGetRequest('<xsl:value-of select="translate(@File, '\', '/')"/>',<xsl:value-of select="@Line"/>); return false;</xsl:attribute>
+                        <xsl:value-of select="@Line"/>
+                      </xsl:element>
                     </td>
                     <td>
                       <xsl:value-of select="@Message"/>
