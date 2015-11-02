@@ -2,6 +2,9 @@
 
 namespace ReSharperReports.Options
 {
+    /// <summary>
+    /// The options for the Transform Verb
+    /// </summary>
     [Verb("transform", HelpText = "Transforms an input XML report file.")]
     public class TransformSubOptions
     {

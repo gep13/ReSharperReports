@@ -22,6 +22,7 @@ namespace ReSharperReports
         /// Entry point for the console application
         /// </summary>
         /// <param name="args">The passed in argumnets from command line</param>
+        /// <returns>An integer value, 0 is good, anything else, bad.</returns>
         private static int Main(string[] args)
         {
             var result = Parser.Default.ParseArguments<TransformSubOptions>(args)
