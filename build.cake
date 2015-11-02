@@ -17,8 +17,8 @@ var solutionPath        = "./Source/ReSharperReports";
 var sourcePath          = "./Source";
 var binDir              = "./Source/ReSharperReports/bin/" + configuration;
 var buildArtifacts      = "./BuildArtifacts";
-var version             = "0.1.0";
-var semVersion          = "0.1.0";
+var version             = "0.2.0";
+var semVersion          = "0.2.0";
 
 var assemblyInfo        = new AssemblyInfoSettings {
                                 Title                   = "ReSharperReports",
@@ -28,7 +28,7 @@ var assemblyInfo        = new AssemblyInfoSettings {
                                 Version                 = version,
                                 FileVersion             = version,
                                 InformationalVersion    = semVersion,
-                                Copyright               = string.Format("Copyright © gep13 {0} - Present", DateTime.Now.Year),
+                                Copyright               = string.Format("Copyright © gep13 and Contributors {0} - Present", DateTime.Now.Year),
                                 CLSCompliant            = true
                             };
 var nuGetPackSettings   = new NuGetPackSettings {

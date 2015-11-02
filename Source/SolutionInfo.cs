@@ -10,9 +10,9 @@ using System;
 [assembly: AssemblyDescription("Command line tool to allow generation of human readable ReSharper Reports")]
 [assembly: AssemblyCompany("gep13")]
 [assembly: AssemblyProduct("ReSharperReports")]
-[assembly: AssemblyVersion("0.1.0")]
-[assembly: AssemblyFileVersion("0.1.0")]
-[assembly: AssemblyInformationalVersion("0.1.0")]
-[assembly: AssemblyCopyright("Copyright © gep13 2015 - Present")]
+[assembly: AssemblyVersion("0.2.0")]
+[assembly: AssemblyFileVersion("0.2.0")]
+[assembly: AssemblyInformationalVersion("0.2.0")]
+[assembly: AssemblyCopyright("Copyright © gep13 and Contributors 2015 - Present")]
 [assembly: CLSCompliant(true)]
 

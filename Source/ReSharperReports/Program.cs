@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml;
 using System.Xml.Xsl;
+using CommandLine;
 using ReSharperReports.Options;
 
 namespace ReSharperReports
@@ -21,16 +22,18 @@ namespace ReSharperReports
         /// Entry point for the console application
         /// </summary>
         /// <param name="args">The passed in argumnets from command line</param>
-        private static void Main(string[] args)
+        /// <returns>An integer value, 0 is good, anything else, bad.</returns>
+        private static int Main(string[] args)
         {
-            var options = new MainOptions();
-            if (CommandLine.Parser.Default.ParseArguments(args, options))
-            {
-                TransformReport(options);
-            }
+            var result = Parser.Default.ParseArguments<TransformSubOptions>(args)
+                    .MapResult(
+                        (TransformSubOptions opts) => TransformReport(opts),
+                        errs => 1);
+
+            return result;
         }
 
-        private static void TransformReport(MainOptions options)
+        private static int TransformReport(TransformSubOptions options)
         {
             ConfigureLogging(options.LogFilePath);
 
@@ -39,7 +42,7 @@ namespace ReSharperReports
             if (!File.Exists(inputFilePath))
             {
                 Logger.WriteError("Unable to locate Input File");
-                return;
+                return 1;
             }
 
             var outputFilePath = options.OutputFilePath;
@@ -58,7 +61,7 @@ namespace ReSharperReports
             if (string.IsNullOrWhiteSpace(rootNodeName))
             {
                 Logger.WriteError("Unable to determine root node of Input File");
-                return;
+                return 1;
             }
 
             var xslFileName = string.Empty;
@@ -95,7 +98,7 @@ namespace ReSharperReports
                 if (!File.Exists(xslFilePath))
                 {
                     Logger.WriteError("Unable to find specified XSL Transform File.");
-                    return;
+                    return 1;
                 }
 
                 var xslt = new XslCompiledTransform();
@@ -104,6 +107,8 @@ namespace ReSharperReports
 
                 Logger.WriteInfo("XSL Transformation complete");
             }
+
+            return 0;
         }
 
         private static void ConfigureLogging(string logFilePath)

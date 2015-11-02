@@ -5,7 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScripts", "BuildScripts", "{F07C055C-19B2-44AC-969B-12895B5155A6}"
 	ProjectSection(SolutionItems) = preProject
-		..\appveyor.yml = ..\appveyor.yml
 		..\build.bat = ..\build.bat
 		..\build.cake = ..\build.cake
 		..\build.ps1 = ..\build.ps1
@@ -22,6 +21,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppVeyor", "AppVeyor", "{70A66735-21A0-40C0-B4BA-441B4806A1B4}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{58E9E3D0-4378-488C-A701-FD318D352569}"
+	ProjectSection(SolutionItems) = preProject
+		..\Tools\packages.config = ..\Tools\packages.config
 	EndProjectSection
 EndProject
 Global

@@ -3,6 +3,16 @@
     <xsl:output method="html" indent="yes" />
     <xsl:template match="/">
         <html>
+          <head>
+            <script>
+              function sendHttpGetRequest(fileName, lineNumber) {
+                var url = "http://127.0.0.1:63330/file?file=" + fileName + "&amp;line=" + lineNumber;
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open('GET', url, false);
+                xmlHttp.send(null);
+              }
+            </script>
+          </head>
             <body>
                 <h1>Statistics</h1>
                 <p>Total codebase size: <xsl:value-of select="//CodebaseCost"/></p>
@@ -14,7 +24,12 @@
                     <h3>Duplicated Fragments:</h3>
                     <xsl:for-each select="Fragment">
                         <xsl:variable name="i" select="position()"/>
-                        <p>Fragment <xsl:value-of select="$i"/> in file <xsl:value-of select="FileName"/> at line: <xsl:value-of select="LineRange/@Start"/></p>
+                        <p>Fragment <xsl:value-of select="$i"/> in file <xsl:value-of select="FileName"/> at line: <xsl:element name="a">
+                          <xsl:attribute name="href">
+                          </xsl:attribute>
+                          <xsl:attribute name="onclick">sendHttpGetRequest('<xsl:value-of select="translate(FileName, '\', '/')"/>',<xsl:value-of select="LineRange/@Start"/>); return false;</xsl:attribute>
+                          <xsl:value-of select="LineRange/@Start"/>
+                        </xsl:element></p>
                         <pre><xsl:value-of select="Text"/></pre>
                     </xsl:for-each>
                 </xsl:for-each>
