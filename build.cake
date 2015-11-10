@@ -83,8 +83,8 @@ Task("Clean")
     CleanDirectories(solutionPath + "/**/bin/" + configuration);
     CleanDirectories(solutionPath + "/**/obj/" + configuration);
 
-	Information("Cleaning BuildArtifacts");
-	CleanDirectories(buildArtifacts);
+    Information("Cleaning BuildArtifacts");
+    CleanDirectories(buildArtifacts);
 });
 
 Task("Restore")
@@ -109,7 +109,7 @@ Task("Build")
     .IsDependentOn("Restore")
     .IsDependentOn("SolutionInfo")
     .IsDependentOn("DupFinder")
-	.IsDependentOn("InspectCode")
+    .IsDependentOn("InspectCode")
     .Does(() =>
 {
     Information("Building {0}", solution);
@@ -121,31 +121,31 @@ Task("Build")
 });
 
 Task("DupFinder")
-	.IsDependentOn("Create-BuildArtifacts-Directory")
+    .IsDependentOn("Create-BuildArtifacts-Directory")
     .Does(() =>
 {
     // Run ReSharper's DupFinder
     DupFinder(solution, new DupFinderSettings() {
-      ShowStats = true,
-      ShowText = true,
-      OutputFile = buildArtifacts + "/_ReSharperReports/dupfinder.xml",
-      });
+        ShowStats = true,
+        ShowText = true,
+        OutputFile = buildArtifacts + "/_ReSharperReports/dupfinder.xml"
+    });
 });
 
 Task("InspectCode")
-	.IsDependentOn("Create-BuildArtifacts-Directory")
+    .IsDependentOn("Create-BuildArtifacts-Directory")
     .Does(() =>
 {
     // Run ReSharper's InspectCode
     InspectCode(solution, new InspectCodeSettings() {
-      SolutionWideAnalysis = true,
-	  Profile = sourcePath + "/ReSharperReports.sln.DotSettings",
-      OutputFile = buildArtifacts + "/_ReSharperReports/inspectcode.xml",
-      });
+        SolutionWideAnalysis = true,
+        Profile = sourcePath + "/ReSharperReports.sln.DotSettings",
+        OutputFile = buildArtifacts + "/_ReSharperReports/inspectcode.xml"
+    });
 });
 
 Task("Create-BuildArtifacts-Directory")
-	.Does(() =>
+    .Does(() =>
 {
     if (!DirectoryExists(buildArtifacts))
     {
@@ -155,7 +155,7 @@ Task("Create-BuildArtifacts-Directory")
 
 Task("Create-NuGet-Package")
     .IsDependentOn("Build")
-	.IsDependentOn("Create-BuildArtifacts-Directory")
+    .IsDependentOn("Create-BuildArtifacts-Directory")
     .Does(() =>
 {
     NuGetPack(nuGetPackSettings);
@@ -171,11 +171,11 @@ Task("Publish-Nuget-Package")
 	var apiKey = EnvironmentVariable("MYGET_DEVELOP_API_KEY");
 	if(!isDevelopBranch)
 	{
-		apiKey = EnvironmentVariable("MYGET_MASTER_API_KEY");
+        apiKey = EnvironmentVariable("MYGET_MASTER_API_KEY");
 	}
 
 	if(isTag) {
-		apiKey = EnvironmentVariable("NUGET_API_KEY");
+        apiKey = EnvironmentVariable("NUGET_API_KEY");
 	}
 
     if(string.IsNullOrEmpty(apiKey)) {
@@ -183,14 +183,14 @@ Task("Publish-Nuget-Package")
     }
 
     var source = EnvironmentVariable("MYGET_DEVELOP_SOURCE");
-	if(!isDevelopBranch)
-	{
-		source = EnvironmentVariable("MYGET_MASTER_SOURCE");
-	}
+    if(!isDevelopBranch)
+    {
+        source = EnvironmentVariable("MYGET_MASTER_SOURCE");
+    }
 
-	if(isTag) {
-		source = EnvironmentVariable("NUGET_SOURCE");
-	}
+    if(isTag) {
+        source = EnvironmentVariable("NUGET_SOURCE");
+    }
 
     if(string.IsNullOrEmpty(source)) {
         throw new InvalidOperationException("Could not resolve MyGet/Nuget source.");
