@@ -59,7 +59,7 @@ if(-Not $SkipToolPackageRestore.IsPresent)
 
 # Make sure that Cake has been installed.
 if (!(Test-Path $CAKE_EXE)) {
-    Throw "Could not find Cake.exe"
+    Invoke-Expression "&`"$NUGET_EXE`" install Cake -ExcludeVersion -PreRelease -OutputDirectory `"$TOOLS_DIR`" -Source `"https://www.myget.org/F/cake`""
 }
 
 # Start Cake
