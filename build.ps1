@@ -1,5 +1,5 @@
 Param(
-  [string]$Script = "Tools\gep13.DefaultBuild\Content\build.cake",
+  [string]$Script = "setup.cake",
   [string]$Target = "Default",
   [ValidateSet("Release", "Debug")]
   [string]$Configuration = "Release",
@@ -63,9 +63,7 @@ if (!(Test-Path $CAKE_EXE)) {
 }
 
 # Make sure that re-usable build.cake file exists.
-if (!(Test-Path $Script)) {
-  Invoke-Expression "&`"$NUGET_EXE`" install gep13.DefaultBuild -ExcludeVersion -PreRelease -OutputDirectory `"$TOOLS_DIR`" -Source `"https://www.myget.org/F/gep13`""
-}
+Invoke-Expression "&`"$NUGET_EXE`" install gep13.DefaultBuild -ExcludeVersion -PreRelease -OutputDirectory `"$TOOLS_DIR`" -Source `"C:\github\gep13\ChocolateyPackages\gep13.DefaultBuild`""
 
 # Start Cake
 Invoke-Expression "$CAKE_EXE `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental"
