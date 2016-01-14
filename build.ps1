@@ -1,14 +1,14 @@
 Param(
-    [string]$Script = "build.cake",
-    [string]$Target = "Default",
-    [ValidateSet("Release", "Debug")]
-    [string]$Configuration = "Release",
-    [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
-    [string]$Verbosity = "Verbose",
-    [switch]$Experimental,
-    [switch]$WhatIf,
-    [switch]$Mono,
-    [switch]$SkipToolPackageRestore
+  [string]$Script = "setup.cake",
+  [string]$Target = "Default",
+  [ValidateSet("Release", "Debug")]
+  [string]$Configuration = "Release",
+  [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
+  [string]$Verbosity = "Verbose",
+  [switch]$Experimental,
+  [switch]$WhatIf,
+  [switch]$Mono,
+  [switch]$SkipToolPackageRestore
 )
 
 $PSScriptRoot = split-path -parent $MyInvocation.MyCommand.Definition;
@@ -20,47 +20,50 @@ $NUGET_URL = "https://nuget.org/nuget.exe"
 # Should we use experimental build of Roslyn?
 $UseExperimental = "";
 if($Experimental.IsPresent) {
-    $UseExperimental = "-experimental"
+  $UseExperimental = "-experimental"
 }
 
 # Is this a dry run?
 $UseDryRun = "";
 if($WhatIf.IsPresent) {
-    $UseDryRun = "-dryrun"
+  $UseDryRun = "-dryrun"
 }
 
 # Should we use mono?
 $UseMono = "";
 if($Mono.IsPresent) {
-    $UseMono = "-mono"
+  $UseMono = "-mono"
 }
 
 # Try download NuGet.exe if do not exist.
 if (!(Test-Path $NUGET_EXE)) {
-    (New-Object System.Net.WebClient).DownloadFile($NUGET_URL, $NUGET_EXE)
+  (New-Object System.Net.WebClient).DownloadFile($NUGET_URL, $NUGET_EXE)
 }
 
 # Make sure NuGet exists where we expect it.
 if (!(Test-Path $NUGET_EXE)) {
-    Throw "Could not find NuGet.exe"
+  Throw "Could not find NuGet.exe"
 }
 
 # Restore tools from NuGet?
 if(-Not $SkipToolPackageRestore.IsPresent)
 {
-    Push-Location
-    Set-Location $TOOLS_DIR
-    Invoke-Expression "$NUGET_EXE install -ExcludeVersion"
-    Pop-Location
-    if ($LASTEXITCODE -ne 0) {
-        exit $LASTEXITCODE
-    }
+  Push-Location
+  Set-Location $TOOLS_DIR
+  Invoke-Expression "$NUGET_EXE install -ExcludeVersion"
+  Pop-Location
+  if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+  }
 }
 
 # Make sure that Cake has been installed.
 if (!(Test-Path $CAKE_EXE)) {
-    Throw "Could not find Cake.exe"
+  Invoke-Expression "&`"$NUGET_EXE`" install Cake -ExcludeVersion -PreRelease -OutputDirectory `"$TOOLS_DIR`" -Source `"https://www.myget.org/F/cake`""
 }
+
+# Make sure that re-usable build.cake file exists.
+Invoke-Expression "&`"$NUGET_EXE`" install gep13.DefaultBuild -ExcludeVersion -PreRelease -OutputDirectory `"$TOOLS_DIR`" -Source `"C:\github\gep13\ChocolateyPackages\gep13.DefaultBuild`""
 
 # Start Cake
 Invoke-Expression "$CAKE_EXE `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental"
