@@ -31,4 +31,11 @@ var nugetFiles                = new [] {
                                 
 var semVersion                = "0.1.0";
 
+// #l .\Tools\gep13.DefaultBuild\Content\appveyor.cake
+#l .\Tools\gep13.DefaultBuild\Content\gitreleasemanager.cake
+#l .\Tools\gep13.DefaultBuild\Content\gitter.cake
+#l .\Tools\gep13.DefaultBuild\Content\gitversion.cake
+#l .\Tools\gep13.DefaultBuild\Content\resharper.cake
+#l .\Tools\gep13.DefaultBuild\Content\slack.cake
+
 #l .\Tools\gep13.DefaultBuild\Content\build.cake
