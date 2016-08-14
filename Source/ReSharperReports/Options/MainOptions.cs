@@ -6,7 +6,7 @@
     public class MainOptions
     {
         /// <summary>
-        /// The transform function
+        /// Gets or sets the transform function
         /// </summary>
         public TransformSubOptions TransformVerb { get; set; }
     }
