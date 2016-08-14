@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>resharperreports.portable</id>
+    <version>0.0.0</version>
+    <packageSourceUrl>https://github.com/gep13/ReSharperReports</packageSourceUrl>
+    <owners>gep13</owners>
+    <title>ReSharperReports</title>
+    <authors>gep13</authors>
+    <projectUrl>https://github.com/gep13/ReSharperReports</projectUrl>
+    <copyright>2016 gep13</copyright>
+    <licenseUrl>https://github.com/gep13/ReSharperReports/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/gep13/ReSharperReports</projectSourceUrl>
+    <docsUrl>http://resharperreports.readthedocs.io/en/develop/</docsUrl>
+    <bugTrackerUrl>https://github.com/gep13/ReSharperReports/issues</bugTrackerUrl>
+    <tags>ReSharper, DupFinder, InspectCode, Reports</tags>
+    <summary>Command line tool to allow generation of human readable ReSharper Reports.</summary>
+    <description>
+The ReSharper Command Line Tools, DupFinder and InspectCode, work really well when executing within Visual Studio, using ReSharper.
+
+However, when you run these tools directly at the command line, the generated XML files are very difficult to read, and understand.
+
+This small utility transforms those XML files in to easily readable HTML files that show exactly where the violations and duplicates exist within your code base.
+    </description>
+  </metadata>
+  <files>
+    <file src=".\..\..\BuildArtifacts\temp\_PublishedApplications\ReSharperReports\ReSharperReports.exe" target="tools" />
+    <file src=".\..\..\nuspec\chocolatey\chocolateyInstall.ps1" target="tools" />
+    <file src=".\..\..\nuspec\chocolatey\chocolateyUninstall.ps1" target="tools" />
+  </files>
+</package>

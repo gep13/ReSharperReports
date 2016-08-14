@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>ReSharperReports</id>
+    <version>0.0.0</version>
+    <authors>gep13</authors>
+    <owners>gep13</owners>
+    <description>Command line tool to allow generation of human readable ReSharper Reports.</description>
+    <summary>Command line tool to allow generation of human readable ReSharper Reports.</summary>
+    <licenseUrl>https://github.com/gep13/ReSharperReports/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/gep13/ReSharperReports/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) gep13</copyright>
+    <tags>ReSharper, DupFinder, InspectCode, Reports</tags>
+  </metadata>
+  <files>
+    <file src="ReSharperReports.exe" />
+    <file src="ReSharperReports.pdb" />
+    <file src="ReSharperReports.xml" />
+  </files>
+</package>
