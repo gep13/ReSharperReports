@@ -34,14 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"Logger",
-        content:"Logger",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
         title:"MainOptions",
         content:"MainOptions",
         description:'',
@@ -49,9 +41,17 @@ var searchModule = function() {
     });
 
     a({
-        id:2,
+        id:1,
         title:"Program",
         content:"Program",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:2,
+        title:"Logger",
+        content:"Logger",
         description:'',
         tags:''
     });
@@ -65,12 +65,6 @@ var searchModule = function() {
     });
 
     y({
-        url:'/ReSharperReports/ReSharperReports/api/ReSharperReports/Logger',
-        title:"Logger",
-        description:""
-    });
-
-    y({
         url:'/ReSharperReports/ReSharperReports/api/ReSharperReports.Options/MainOptions',
         title:"MainOptions",
         description:""
@@ -79,6 +73,12 @@ var searchModule = function() {
     y({
         url:'/ReSharperReports/ReSharperReports/api/ReSharperReports/Program',
         title:"Program",
+        description:""
+    });
+
+    y({
+        url:'/ReSharperReports/ReSharperReports/api/ReSharperReports/Logger',
+        title:"Logger",
         description:""
     });
 
