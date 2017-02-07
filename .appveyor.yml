@@ -19,16 +19,6 @@ branches:
     - /hotfix/.*/
 
 #---------------------------------#
-#  Notifications Configuration    #
-#---------------------------------#
-notifications:
-  - provider: Webhook
-    url: https://webhooks.gitter.im/e/a21963d3bba4db60a63a
-    on_build_success: true
-    on_build_failure: true
-    on_build_status_changed: true
-
-#---------------------------------#
 #  Build Cache                    #
 #---------------------------------#
 cache:
