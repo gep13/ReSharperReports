@@ -13,7 +13,6 @@ into human readable HTML Reports.
 
 ||Stable|Pre-release|
 |:--:|:--:|:--:|
-|Docs|[![Documentation Status](https://readthedocs.org/projects/resharperreports/badge/?version=stable)](http://resharperreports.readthedocs.org/en/stable/)|[![Documentation Status](https://readthedocs.org/projects/resharperreports/badge/?version=develop)](http://resharperreports.readthedocs.org/en/develop/)|
 |GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/gep13/ReSharperReports.svg)](https://github.com/gep13/ReSharperReports/releases/latest)|
 |NuGet|[![NuGet](https://img.shields.io/nuget/v/ReSharperReports.svg)](https://www.nuget.org/packages/ReSharperReports)|[![NuGet](https://img.shields.io/nuget/vpre/ReSharperReports.svg)](https://www.nuget.org/packages/ReSharperReports)|
 
@@ -25,11 +24,10 @@ into human readable HTML Reports.
 
 ## Quick Links
 
-- [Documentation](http://resharperreports.readthedocs.org/en/develop/)
-- [Installation](http://resharperreports.readthedocs.org/en/develop/installation/)
-- [Usage](http://resharperreports.readthedocs.org/en/develop/usage/)
+- [Documentation](http://gep13.github.io/ReSharperReports/)
 
 ## Chat Room
+
 Come join in the conversation about ReSharperReports in our Gitter Chat Room
 
 [![Join the chat at https://gitter.im/gep13/ReSharperReports](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gep13/ReSharperReports?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
