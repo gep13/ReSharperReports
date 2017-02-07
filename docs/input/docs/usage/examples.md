@@ -3,22 +3,22 @@
 In order to use ReSharperReports, the following inputs are using:
 
 ## Required Parameters
+
 * InputFilePath
-	* `-i, --inputFilePath`: The path to the input report XML to be transformed.
+  * `-i, --inputFilePath`: The path to the input report XML to be transformed.
 * OutputFilePath
-	* `-o, --outputFilePath`: The path to the output report in HTML format.
+  * `-o, --outputFilePath`: The path to the output report in HTML format.
 
 ## Optional Parameters
+
 * XslFilePath
-	* `-x, --xslFilePath`: The path to the input XSL file to be used to perform transformation.
+  * `-x, --xslFilePath`: The path to the input XSL file to be used to perform transformation.
 * LogFilePath 
-	* `-l, --logFilePath`: Path to where log file should be created.  Defaults to logging to the console.
-	
+  * `-l, --logFilePath`: Path to where log file should be created.  Defaults to logging to the console.
 * Version
-	* `--version`: Outputs the current version number of the ReSharperReports tool
-	
+  * `--version`: Outputs the current version number of the ReSharperReports tool
 * Help
-	* `--help`: Provides help documentation for how to run ReSharperReports
+  * `--help`: Provides help documentation for how to run ReSharperReports
 
 ## Example Usage
 
