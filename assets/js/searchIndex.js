@@ -34,22 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"Program",
-        content:"Program",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
-        title:"TransformSubOptions",
-        content:"TransformSubOptions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:2,
         title:"Logger",
         content:"Logger",
         description:'',
@@ -57,23 +41,27 @@ var searchModule = function() {
     });
 
     a({
-        id:3,
+        id:1,
         title:"MainOptions",
         content:"MainOptions",
         description:'',
         tags:''
     });
 
-    y({
-        url:'/ReSharperReports/ReSharperReports/api/ReSharperReports/Program',
+    a({
+        id:2,
         title:"Program",
-        description:""
+        content:"Program",
+        description:'',
+        tags:''
     });
 
-    y({
-        url:'/ReSharperReports/ReSharperReports/api/ReSharperReports.Options/TransformSubOptions',
+    a({
+        id:3,
         title:"TransformSubOptions",
-        description:""
+        content:"TransformSubOptions",
+        description:'',
+        tags:''
     });
 
     y({
@@ -85,6 +73,18 @@ var searchModule = function() {
     y({
         url:'/ReSharperReports/ReSharperReports/api/ReSharperReports.Options/MainOptions',
         title:"MainOptions",
+        description:""
+    });
+
+    y({
+        url:'/ReSharperReports/ReSharperReports/api/ReSharperReports/Program',
+        title:"Program",
+        description:""
+    });
+
+    y({
+        url:'/ReSharperReports/ReSharperReports/api/ReSharperReports.Options/TransformSubOptions',
+        title:"TransformSubOptions",
         description:""
     });
 
