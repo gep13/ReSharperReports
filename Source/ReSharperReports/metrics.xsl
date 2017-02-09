@@ -57,14 +57,14 @@
   <xsl:template match="Namespaces">
     <h3>Details</h3>
     <table>
-      <tr  class="details">
-      <th>Namespace</th>
+      <tr class="details">
+        <th>Namespace</th>
         <th>MaintainabilityIndex</th>
         <th>CyclomaticComplexity</th>
         <th>ClassCoupling</th>
         <th>DepthOfInheritance</th>
         <th>LinesOfCode</th>
-    </tr>
+      </tr>
       <xsl:apply-templates select="Namespace" />
     </table>
   </xsl:template>
