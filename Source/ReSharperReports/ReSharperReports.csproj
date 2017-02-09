@@ -70,6 +70,7 @@
   <ItemGroup>
     <EmbeddedResource Include="dupfinder.xsl" />
     <EmbeddedResource Include="inspectcode.xsl" />
+    <EmbeddedResource Include="metrics.xsl" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />

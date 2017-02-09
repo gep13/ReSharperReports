@@ -73,6 +73,9 @@ namespace ReSharperReports
                 case "Report":
                     xslFileName = "ReSharperReports.inspectcode.xsl";
                     break;
+                case "CodeMetricsReport":
+                    xslFileName = "ReSharperReports.metrics.xsl";
+                    break;
                 default:
                     Logger.WriteError("Unable to parse input XML file.");
                     break;
