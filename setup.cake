@@ -10,7 +10,7 @@ BuildParameters.SetParameters(context: Context,
                             repositoryName: "ReSharperReports",
                             appVeyorAccountName: "garyewanpark");
 
-BuildParameters.PrintParamters(Context);
+BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context);
 
